@@ -1,27 +1,26 @@
 package com.microserviclient.service;
 
-
-import com.microserviclient.model.Client;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
+import com.microserviclient.model.entity.ClientEntity;
+import com.microserviclient.model.request.CreateClientRequest;
+import com.microserviclient.model.request.UpdateClientRequest;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@Service
 public interface ClientService {
 
-    Mono<Client> create(Client client);
-
-    Flux<Client> findAll();
-
-    Mono<Client> findById(String id);
-
-    Mono<ResponseEntity<Client>> update(String id, Client client);
-
-    Mono<Void> deleteById(String id);
-
-
-
-
+    Mono<ClientEntity> create(CreateClientRequest clientDTO);
+    Mono<ClientEntity> update(UpdateClientRequest clientDTO);
+    Flux<ClientEntity> findAll();
+    Mono<ClientEntity> findById(String id);
+    Mono<ClientEntity> findByDocumentNumber(String documentNumber);
+    Mono<ClientEntity> findByEmail(String email);
+    Flux<ClientEntity> findByName(String name);
+    Mono<ClientEntity> findByRuc(String ruc);
+    // Logical on status
+    Mono<ClientEntity> deleteClient(String id);
+    // on database
+    Mono<ClientEntity> removeById(String id);
+    // on database
+    Mono<Void> deleteAll();
 
 }
