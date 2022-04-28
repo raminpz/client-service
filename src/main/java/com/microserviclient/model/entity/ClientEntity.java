@@ -25,9 +25,9 @@ public class ClientEntity {
     private String id;
     private ClientType clientType; // Personal or enterprise
     private String status; // active or inactive
-    private PersonInfo personInfo; // information personal
-    private EnterpriseInfo enterpriseInfo; // information enterprise
-    private Date createDate; // creation date
-    private Date updateDate; // update date
-    private Date lastOperationUpdate; // last operation done
+    private PersonInfo personInfo;
+    private EnterpriseInfo enterpriseInfo;
+    private Date createDate;
+    private Date updateDate;
+    private Date lastOperationUpdate;
 }
